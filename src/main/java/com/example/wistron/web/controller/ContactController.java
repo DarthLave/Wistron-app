@@ -69,7 +69,7 @@ public class ContactController {
     public ResponseEntity<?> findContactById(@PathVariable Long id) {
         Map<String, String> response = new HashMap<>();
         try {
-            log.info("user found");
+            log.info("contact found");
             Contact contact = contactService.getContact(id).get();
             return ResponseEntity.ok(new ContactDTO(contact.getName(), contact.getSurname(), contact.getNumber()));
         } catch (Exception e) {
@@ -118,7 +118,7 @@ public class ContactController {
     public ResponseEntity<?> deleteContact(@PathVariable Long id) {
         Map<String, String> response = new HashMap<>();
         try {
-            log.info("user deleted");
+            log.info("contact deleted");
             contactService.delete(id);
             return ResponseEntity.status(HttpStatus.OK).body("The contact has been deleted.");
         } catch (Exception e) {
