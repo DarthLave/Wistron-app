@@ -15,10 +15,10 @@ public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     private Long id;
-    @Column(name = "name", unique = true, nullable = false, length = (50))
+    @Column(name = "name", nullable = false, length = (50))
     private String name;
-    @Column(name = "surname", unique = true, nullable = false, length = (50))
+    @Column(name = "surname", nullable = false, length = (50))
     private String surname;
-    @Column(name = "number", nullable = false)
+    @Column(name = "number", unique = true, nullable = false)
     private String number;
 }
